@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forcasting Website</title>
+    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="weather-app">
+      <div class="container">
+        <h3 class="brand">weather-app</h3>
+        <div>
+          <h1 class="temp">temp &deg;</h1>
+          <div class="city-time">
+            <h1 class="name">location_name</h1>
+            <small>
+              <span class="time">time</span>-
+              <span class="date">date</span>
+            </small>
+          </div>
+          <div class="weather">
+            <img src="" alt="Sunny" />
+            <span class="condition">Cloudy</span>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <form id="locationinput">
+          <input type="text" class="search" placeholder="Search Location..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <ul class="cities">
+          <li class="city">Delhi</li>
+          <li class="city">Lucknow</li>
+          <li class="city">Mumbai</li>
+        </ul>
+        <ul class="details">
+          <h4>Weather Details</h4>
+          <li><span>cloudy</span> <span class="cloud">89%</span></li>
+          <li><span>humidity</span> <span class="humidity">89%</span></li>
+          <li><span>wind</span> <span class="wind">8km/hr</span></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
