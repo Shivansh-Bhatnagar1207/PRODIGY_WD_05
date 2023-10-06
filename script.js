@@ -20,9 +20,9 @@ let cityinput = "Lucknow";
 
 cities.forEach((city) => {
   city.addEventListener("click", (e) => {
-    cityinput.e.target.innerHTML;
+    cityinput = e.target.innerHTML;
     fetchWeatherData();
-    app.style.opacity = "0";
+    // app.style.opacity = "0";
   });
 });
 
@@ -49,7 +49,7 @@ function dayofweek(day, month, year) {
     "Friday",
     "Saturday",
   ];
-  return weekday[new Date(`${day}/${month}/${year}`.getDay())];
+  return weekday[new Date(`${day}/${month}/${year}`).getDay()];
 }
 
 function fetchWeatherData() {
@@ -59,5 +59,26 @@ function fetchWeatherData() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+
+      temp.innerHTML = data.current.temp_c + "&deg;";
+      conditionOutput.innerHTML = data.current.condition.text;
+      const date = data.location.localtime;
+      const y = parseInt(date.substr(0, 4));
+      const m = parseInt(date.substr(5, 2));
+      const d = parseInt(date.substr(8, 2));
+      const time = date.substr(11);
+
+      dateOutput.innerHTML = `${dayofweek(d, m, y)}-${d}/${m}/${y}`;
+      timeOutput.innerHTML = time;
+      nameOutput.innerHTML = data.location.name;
+
+      const iconId = data.current.condition.icon.substr(
+        "//cdn.weatherapi.com/weather/64x64/".length
+      );
+      icon.src = "./icons/" + iconId;
+
+      cloudOutput.innerHTML = data.current.cloud + "%";
+      humidityOutput.innerHTML = data.current.humidity + "%";
+      windOutput.innerHTML = data.current.wind_kph + "km/h";
     });
 }
