@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forcasting Website</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Borel&family=Oswald:wght@300&family=Roboto+Slab:wght@200&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -18,16 +25,16 @@
       <div class="container">
         <h3 class="brand">weather-app</h3>
         <div>
-          <h1 class="temp">temp &deg;</h1>
+          <h1 class="temp">23 &deg;</h1>
           <div class="city-time">
-            <h1 class="name">location_name</h1>
+            <h1 class="name">Lucknow</h1>
             <small>
-              <span class="time">time</span>-
-              <span class="date">date</span>
+              <span class="time">16:12</span> -
+              <span class="date">Monday Oct 4</span>
             </small>
           </div>
           <div class="weather">
-            <img src="" alt="Sunny" />
+            <img src="resources/day/113.png" alt="Sunny" />
             <span class="condition">Cloudy</span>
           </div>
         </div>
@@ -35,7 +42,9 @@
       <div class="panel">
         <form id="locationinput">
           <input type="text" class="search" placeholder="Search Location..." />
-          <button type="submit"><i class="fas fa-search"></i></button>
+          <button type="submit" class="submit">
+            <i class="fas fa-search"></i>
+          </button>
         </form>
         <ul class="cities">
           <li class="city">Delhi</li>
