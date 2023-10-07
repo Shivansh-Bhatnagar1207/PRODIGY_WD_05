@@ -14,6 +14,7 @@ const form = document.getElementById("locationinput");
 const search = document.querySelector(".search");
 const btn = document.querySelector(".submit");
 const cities = document.querySelectorAll(".cities");
+const emoji = document.querySelector(".emoji");
 
 //! default city when the page loads
 let cityinput = "Lucknow";
@@ -88,8 +89,10 @@ function fetchWeatherData() {
       if (code == 1000) {
         app.style.backgroundImage = `url(./images/${timeofday}/clear.jpg)`;
         btn.style.background = "#a27bd5";
+        emoji.innerHTML = "🤠";
         if (timeofday == "night") {
           btn.style.background = "#181e27";
+          emoji.innerHTML = "🤠";
         } else if (
           code == 1003 ||
           code == 1006 ||
@@ -105,9 +108,11 @@ function fetchWeatherData() {
         ) {
           app.style.backgroundImage = `url(.images/${timeofday}/cloudy.jpg)`;
           btn.style.background = "#fa6d1b";
+          emoji.innerHTML = "😶‍🌫️";
         }
         if (timeofday == "night") {
           btn.style.background = "#181e27";
+          emoji.innerHTML = "😶‍🌫️";
         }
       } else if (
         code == 1063 ||
@@ -129,14 +134,18 @@ function fetchWeatherData() {
       ) {
         app.style.backgroundImage = `url(./images/${timeofday}/rainy.jpg)`;
         btn.style.background = "#647d75";
+        emoji.innerHTML = "🌧️";
         if (timeofday == "night") {
           btn.style.background = "#325c80";
+          emoji.innerHTML = "🌧️";
         }
       } else {
         app.style.backgroundImage = `url(./images/${timeofday}/snowy.jpg`;
         btn.style.background = "#4d72aa";
+        emoji.innerHTML = "🥶";
         if (timeofday == "night") {
           btn.style.background = "#1b1b1b";
+          emoji.innerHTML = "🥶";
         }
       }
       app.style.opacity = "1";
